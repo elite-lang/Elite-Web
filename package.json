@@ -1,0 +1,51 @@
+{
+  "name": "Elite-Web",
+  "productName": "Elite-Web",
+  "version": "0.1.0",
+  "description": "Elite官方主页",
+  "authors": [
+    "Sun Xiaofan <sun_xfancy@163.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:elite-lang/Elite-Web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elite-lang/Elite-Web/issues"
+  },
+  "keywords": [
+    "elite",
+    "web",
+    "compiler"
+  ],
+  "dependencies": {
+    "react": "0.14.3",
+    "react-dom": "0.14.3",
+    "antd": "~0.10.4",
+    "font-awesome": "~4.5.0",
+    "browserify": "~12.0.1"
+  },
+  "devDependencies": {
+    "gulp": "3.9.0",
+    "gulp-cached": "1.1.0",
+    "gulp-concat": "2.6.0",
+    "gulp-livereload": "3.8.1",
+    "gulp-load-plugins": "1.1.0",
+    "gulp-sass": "2.1.0",
+    "gulp-shell": "0.5.1",
+    "gulp-util": "3.0.7",
+    "typescript": "1.7.3",
+    "node-gyp": "3.2.0",
+    "npm-check-updates": "2.5.1",
+    "run-sequence": "1.1.5",
+    "react-tools": "0.13.3",
+    "tsd": "0.6.5"
+  },
+  "scripts": {
+    "preinstall": "npm prune",
+    "start": "gulp",
+    "update-typings": "tsd update --save --overwrite",
+    "update-dependencies": "ncu -u"
+  },
+  "license": "MIT"
+}
