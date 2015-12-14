@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
-var runSequence = require('run-sequence');
 
 var $ = gulpLoadPlugins();
 
@@ -36,8 +35,7 @@ var options = {
 
 gulp.task("typescript", $.shell.task("tsc -p ./src/"));
 
-gulp.task("browserify", $.shell.task("browserify ./compiled/main-page.js" +
-    "-u fs -u remote" +
+gulp.task("browserify", ["build"], $.shell.task("browserify ./compiled/index.js" +
     " -o ./app/js/bundle.js"));
 
 gulp.task("sass", function() {
@@ -54,9 +52,4 @@ gulp.task("clean", function() {
 
 gulp.task("build", ["typescript", "sass"]);
 
-gulp.task("default", function() {
-    return runSequence(
-        "build",
-        "browserify"
-    );
-});
+gulp.task("default", ["browserify"]);

@@ -19,11 +19,10 @@
     "compiler"
   ],
   "dependencies": {
-    "react": "0.14.3",
-    "react-dom": "0.14.3",
     "antd": "~0.10.4",
     "font-awesome": "~4.5.0",
-    "browserify": "~12.0.1"
+    "react": "0.14.3",
+    "react-dom": "0.14.3"
   },
   "devDependencies": {
     "gulp": "3.9.0",
@@ -37,8 +36,9 @@
     "typescript": "1.7.3",
     "node-gyp": "3.2.0",
     "npm-check-updates": "2.5.1",
-    "run-sequence": "1.1.5",
+    "browserify": "~12.0.1",
     "react-tools": "0.13.3",
+    "node-sass": "^3.4.2",
     "tsd": "0.6.5"
   },
   "scripts": {
