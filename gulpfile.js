@@ -34,11 +34,10 @@ var options = {
     }
 };
 
-gulp.task("typescript", $.shell.task("tsc -p ./src/Pages/"));
-gulp.task("typescript-main", $.shell.task("tsc -p ./src/Main/"));
+gulp.task("typescript", $.shell.task("tsc -p ./src/"));
 
 gulp.task("browserify", $.shell.task("browserify ./compiled/main-page.js" +
-    " -u electron -u fs -u remote -u dialog" +
+    "-u fs -u remote" +
     " -o ./app/js/bundle.js"));
 
 gulp.task("sass", function() {
@@ -53,14 +52,11 @@ gulp.task("clean", function() {
     return require("del").sync([options.typeScript.target + "/**"]);
 });
 
-gulp.task("build", ["typescript", "typescript-main", "sass"]);
-
-gulp.task("run", $.shell.task("electron ."));
+gulp.task("build", ["typescript", "sass"]);
 
 gulp.task("default", function() {
     return runSequence(
         "build",
-        "browserify",
-        $.shell.task("electron .")
+        "browserify"
     );
 });
